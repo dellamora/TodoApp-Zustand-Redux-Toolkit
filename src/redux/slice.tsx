@@ -1,38 +1,41 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
-import { type Todo } from "~/common/types/interfaces";
 
-const initialState = [] as Todo[];
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { type TodoState } from '~/common/interfaces';
 
-const todoSlice = createSlice({
-  name: "todos",
+const initialState: TodoState = {
+  todos: [],
+};
+
+const todosSlice = createSlice({
+  name: 'todos',
   initialState,
   reducers: {
-    addTodo: {
-      reducer: (state, action: PayloadAction<Todo>) => {
-        state.push(action.payload);
-      },
-      prepare: (description: string) => ({
-        payload: {
-          id: uuidv4(),
-          description,
-          completed: false,
-        } as Todo,
-      }),
+    addTodo: (state, action: PayloadAction<string>) => {
+      const id = state.todos.length + 1;
+      state.todos.push({ id, title: action.payload, completed: false });
     },
-    removeTodo(state, action: PayloadAction<string>) {
-      const index = state.findIndex((todo) => todo.id === action.payload);
-      state.splice(index, 1);
+    editTodo: (state, action: PayloadAction<{ id: number; title: string }>) => {
+      const { id, title } = action.payload;
+      const todo = state.todos.find((todo) => todo.id === id);
+      if (todo) {
+        todo.title = title;
+      }
     },
-    setTodoStatus(
-      state,
-      action: PayloadAction<{ completed: boolean; id: string }>
-    ) {
-      const index = state.findIndex((todo) => todo.id === action.payload.id);
-      state[index].completed = action.payload.completed;
+    toggleTodo: (state, action: PayloadAction<number>) => {
+      const todo = state.todos.find((todo) => todo.id === action.payload);
+      if (todo) {
+        todo.completed = !todo.completed;
+      }
+    },
+    deleteTodo: (state, action: PayloadAction<number>) => {
+      const index = state.todos.findIndex((todo) => todo.id === action.payload);
+      if (index !== -1) {
+        state.todos.splice(index, 1);
+      }
     },
   },
 });
 
-export const { addTodo, removeTodo, setTodoStatus } = todoSlice.actions;
-export default todoSlice.reducer;
+export const { addTodo, editTodo, toggleTodo, deleteTodo } = todosSlice.actions;
+
+export default todosSlice.reducer;

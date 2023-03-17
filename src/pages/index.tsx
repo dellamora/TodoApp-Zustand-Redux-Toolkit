@@ -1,4 +1,7 @@
 import { type NextPage } from "next";
+import { AddTodoForm } from "~/redux/addTodo";
+import { TodoList } from "~/redux/todoList";
+
 
 const Home: NextPage = () => {
   return (
@@ -8,14 +11,9 @@ const Home: NextPage = () => {
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             My <span className="text-[hsl(280,100%,70%)]">TODO</span> App
           </h1> 
-          <form>
-            <input placeholder="Enter a new task..." className="bg-transparent border-#15162c border rounded"/>
-            <button className="ml-2">add</button>
-            <ul>
-              <li>oioi</li>
-            </ul>
-          </form>
 
+          <AddTodoForm />
+          <TodoList />
         </div>
       </main>
     </>

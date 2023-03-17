@@ -12,6 +12,9 @@ const Home: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!text) {
+      return 
+    }
     addTodo(text);
     setText("");
   };

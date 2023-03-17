@@ -1,5 +1,9 @@
-import { configureStore, type ThunkAction, type Action } from '@reduxjs/toolkit';
-import todosReducer from './slice';
+import {
+  configureStore,
+  type ThunkAction,
+  type Action,
+} from "@reduxjs/toolkit";
+import todosReducer from "./slice";
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -17,4 +21,3 @@ export const store = configureStore({
 });
 
 export type AppDispatch = typeof store.dispatch;
-

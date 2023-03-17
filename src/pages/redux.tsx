@@ -2,7 +2,6 @@ import { type NextPage } from "next";
 import { AddTodoForm } from "~/redux/addTodo";
 import { TodoList } from "~/redux/todoList";
 
-
 const Home: NextPage = () => {
   return (
     <>
@@ -10,7 +9,7 @@ const Home: NextPage = () => {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             My <span className="text-[hsl(280,100%,70%)]">TODO</span> App
-          </h1> 
+          </h1>
 
           <AddTodoForm />
           <TodoList />

@@ -5,15 +5,14 @@ import Link from "next/link";
 const Home: NextPage = () => {
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center  bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <div className="container flex flex-col items-center gap-12 px-4 py-16 ">
-          <Link href="/redux" className="text-white text-5xl font-extrabold tracking-tight  sm:text-[5rem]">
+      <main className="text-white  text-5xl font-extrabold tracking-tight  sm:text-[5rem] flex min-h-screen space-x-10 items-center justify-center  bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+          <Link href="/redux" className="">
             Redux
           </Link>
-          <Link href="/zustand"  className="text-[hsl(280,100%,70%)] text-5xl font-extrabold tracking-tight  sm:text-[5rem]">
-            Zustand
+          <h1 className="text-[hsl(280,100%,70%)] ">VS</h1>
+          <Link href="/zustand"  >
+            Zustand 
           </Link>
-        </div>
       </main>
     </>
   );

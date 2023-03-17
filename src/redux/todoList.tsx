@@ -21,12 +21,12 @@ export const TodoList = () => {
          className={` ${todo.completed? "line-through" : "none"} bg-[#cc66ff12] rounded p-2 min-w-[400px] flex justify-between items-center `}               
         >
           <input
-            className="w-4 h-4 "
+            className="w-4 h-4"
             type="checkbox"
             checked={todo.completed}
             onChange={() => handleToggleTodo(todo.id)}
           />
-          {todo.title}
+          {todo.task}
           <button  onClick={() => handleDeleteTodo(todo.id)} >
           <svg 
            xmlns="http://www.w3.org/2000/svg" 

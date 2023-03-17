@@ -12,13 +12,13 @@ const todosSlice = createSlice({
   reducers: {
     addTodo: (state, action: PayloadAction<string>) => {
       const id = state.todos.length + 1;
-      state.todos.push({ id, title: action.payload, completed: false });
+      state.todos.push({ id, task: action.payload, completed: false });
     },
-    editTodo: (state, action: PayloadAction<{ id: number; title: string }>) => {
-      const { id, title } = action.payload;
+    editTodo: (state, action: PayloadAction<{ id: number; task: string }>) => {
+      const { id, task } = action.payload;
       const todo = state.todos.find((todo) => todo.id === id);
       if (todo) {
-        todo.title = title;
+        todo.task = task;
       }
     },
     toggleTodo: (state, action: PayloadAction<number>) => {

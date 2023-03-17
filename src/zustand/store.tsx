@@ -1,9 +1,12 @@
 import create from 'zustand';
-import { type TodoStateZustand, type Todo } from '~/common/interfaces';
+import { type TodoStateZustand} from '~/common/interfaces';
 
 const useTodoStore = create<TodoStateZustand>(set => ({
   todos: [],
-  addTodo: (text: string) => set(state => ({ todos: [...state.todos, { id: state.todos.length + 1, task: text, completed: false }] })),
+  addTodo: (text: string) => 
+  set(state => ({
+     todos: [...state.todos, { id: state.todos.length + 1, task: text, completed: false }] 
+    })),
   toggleTodo: id =>
     set(state => ({
       todos: state.todos.map(todo =>

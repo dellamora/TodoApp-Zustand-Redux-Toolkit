@@ -20,4 +20,4 @@ The Zustand Todo App uses the Zustand library for state management. To add a new
 
 ## Conclusion
 
-Both Todo Apps provide the same basic functionality, but use different state management libraries. Redux Toolkit is a popular choice for state management in large applications, while Zustand is a more lightweight alternative that may be better suited for smaller projects.
+Use Zustand

@@ -1,28 +1,23 @@
-# Create T3 App
+## Todo App with Redux Toolkit and Zustand
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is a Todo App project developed using two different libraries: Redux Toolkit and Zustand. Both libraries were used for state management in the application, allowing users to create, mark as complete, and delete tasks.
 
-## What's next? How do I make an app with this?
+[view project](https://todos-cyan-phi.vercel.app/)
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Using the Todo Apps
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Both Todo Apps offer the same functionality: creating tasks, marking them as complete, and deleting them. However, they use different state management libraries.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
 
-## Learn More
+## Redux Toolkit Todo App
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+The Redux Toolkit Todo App uses the Redux library for state management. To add a new task, simply type in the task name and press "Enter". To mark a task as complete, click on the checkbox next to the task name. To delete a task, click on the "trash" button next to the task name.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Zustand Todo App
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+The Zustand Todo App uses the Zustand library for state management. To add a new task, simply type in the task name and press "Enter". To mark a task as complete, click on the checkbox next to the task name. To delete a task, click on the "trash" button next to the task name.
 
-## How do I deploy this?
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## Conclusion
+
+Both Todo Apps provide the same basic functionality, but use different state management libraries. Redux Toolkit is a popular choice for state management in large applications, while Zustand is a more lightweight alternative that may be better suited for smaller projects.

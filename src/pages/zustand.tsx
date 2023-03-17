@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!text) {
+    if (text.trim() === "") {
       return 
     }
     addTodo(text);
